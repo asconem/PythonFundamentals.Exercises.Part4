@@ -16,9 +16,13 @@ def evaluate_result():
     while user != computer:
         if user > computer:
             user = int(input("Your guess was too high! Guess again: "))
+            while user < 0 or user > 10:
+                user = int(input("Invalid number. Enter a number between 0 an 10: "))
             continue
         elif computer > user:
             user = int(input("Your guess was too low! Guess again: "))
+            while user < 0 or user > 10:
+                user = int(input("Invalid number. Enter a number between 0 an 10: "))
             continue
     if user == computer:
         print("Your guess was correct! Nice job!")
